@@ -30,7 +30,8 @@ jobs:
         with:
           ndk-version: r15c
 
-      - name: Setup Java JDK
+      # --- AQUÍ EMPIEZA LA TRAMPA ---
+      - name: Setup Java JDK 17 (Para engañar al SDK)
         uses: actions/setup-java@main
         with:
           distribution: 'zulu'
@@ -38,6 +39,13 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@main
+
+      - name: Setup Java JDK 11 (Para que Gradle compile chido)
+        uses: actions/setup-java@main
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      # --- AQUÍ TERMINA LA TRAMPA ---
 
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1.2.0
