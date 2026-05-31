@@ -21,10 +21,12 @@ import mobile.objects.Hitbox;
 import mobile.objects.MobilePad;
 import mobile.backend.MobileData;
 #else
+#if android
 import mobile.backend.StorageUtil;
 import mobile.backend.PsychJNI;
 import mobile.options.*;
 import mobile.backend.MobileScaleMode;
+#end
 #end
 
 // Android
